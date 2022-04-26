@@ -22,6 +22,14 @@ const resolvers = {
             return FilmList;
         }
     },
+    User: { //Specific user based attached query
+        favouriteFilms: () => {
+            const listedFilms = _.filter(FilmList, (film) =>
+                Number(film.published) >= 2000 &&
+                 Number(film.published) <= 2010);
+                return listedFilms;
+         },
+    },
 };
 
 //Example of getting a single user and specific data

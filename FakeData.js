@@ -77,7 +77,7 @@ const UserList = [
     {
       id: 3,
       name: "Superbad",
-      yearOfPublication: 2009,
+      published: 2009,
       inTheaters: true,
     },
     {
