@@ -22,12 +22,13 @@ const resolvers = {
             return FilmList;
         }
     },
-    User: { //Specific user based attached query
-        favouriteFilms: () => {
-            const listedFilms = _.filter(FilmList, (film) =>
-                Number(film.published) >= 2000 &&
-                 Number(film.published) <= 2010);
-                return listedFilms;
+    User: { //Specific user based attached query by ID
+        favouriteFilms: (parent, args) => {
+            console.log(parent);
+            const filmIDs = parent.favouriteFilms;
+            console.log(filmIDs);
+            const favouriteFilms = _.filter(FilmList, (film) => filmIDs.indexOf(film.id) != -1);
+            return favouriteFilms;
          },
     },
 };
@@ -41,6 +42,19 @@ const resolvers = {
 //       friends {
 //         id
 //         name
+//       }
+//     }
+//   }
+
+//Example of getting favourite films by user ID
+// query GetFavouriteFilms($userID: ID!) {
+//     user(id: $userID){
+//       name
+//       age
+//       favouriteFilms {
+//         name
+//         published
+//         inTheaters
 //       }
 //     }
 //   }

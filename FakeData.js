@@ -20,6 +20,9 @@ const UserList = [
         age: 5,
         nationality: "CHILE",
         }
+      ],
+      favouriteFilms: [
+        1,4
       ]
     },
     {
@@ -28,6 +31,9 @@ const UserList = [
       username: "Mathew",
       age: 20,
       nationality: "UK",
+      favouriteFilms: [
+        2,3
+      ]
     },
     {
       id: 3,
