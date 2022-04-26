@@ -11,8 +11,18 @@ const typeDefs = gql`
         friends: [User]
     }
 
+    type Film {
+        id: ID!
+        name: String!
+        published: Int!
+        inTheaters: Boolean!
+    }
+
     type Query {
         users: [User!]!
+        user(id: ID!): User!
+        films: [Film!]!
+        film(name: String!): Film!
     }
 
     enum Nationality {
@@ -21,6 +31,7 @@ const typeDefs = gql`
         CANADA
         BRAZIL
         GERMANY
+        UK
     }
 `;
 module.exports = { typeDefs };
